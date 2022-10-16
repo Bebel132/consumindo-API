@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-1: #17162E;
+    --cor-2: #1D1C3B;
+    --cor-3: #454558;
+    --cor-4: #FFFFFF;
+    --cor-5: #ACACAC;
+
+    --fonte: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    background-color: var(--cor-1);
+    font-family: var(--fonte);
+    color: var(--cor-4);
+}
+
+header {
+    max-width: 30rem;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 0rem 2.5rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header span {
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.barraPesquisa {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+
+.barraPesquisa input {
+    max-width: 30rem;
+    width: 90%;
+    background-color: var(--cor-3);
+    padding: 1.3rem 1rem;
+    border: none;
+    border-radius:  5px;
+}
+
+.barraPesquisa i {
+    position: absolute;
+    margin-left: -2.5rem;
+    margin-top: 1.2rem;
+    font-size: 20px;
+}
+
+.barraPesquisa input::placeholder {
+    font-size: 15px;
+}
+
+.barraPesquisa input::placeholder, i {
+    color: #8A8A8A;
+}
+
+.filmes-container {
+    margin: auto;
+    max-width: 70rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filme {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    align-items: center;
+    background-color: var(--cor-2);
+    padding: 1rem;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 5px 30px -7px rgba(0,0,0,0.68); 
+    box-shadow: 0px 5px 30px -7px rgba(0,0,0,0.68);
+}
+
+.filme_img {
+    margin: auto;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 28px 5px rgba(0,0,0,0.28); 
+    box-shadow: 0px 0px 28px 5px rgba(0,0,0,0.28);
+}
+
+.filme-informacoes_quantitativas {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.filme-informacoes_nota {
+    margin-right: 2rem;
+}
+
+.filme-informacoes_nota i, .filme-informacoes_favoritar i{
+    margin-right: .5rem;
+}
+
+.fa-star {
+    color: #ffff00;
+}
+
+.filme-sinopse {
+    padding: 0 1rem;
+    text-align: justify;
+    color: var(--cor-5);
+}
+
+@media screen and (max-width: 1280px) {
+    .filme {
+        width: 80%;
+    }
+
+    .filme_informacoes {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .filme {
+        grid-template-areas: 
+        "img info info"
+        "sino sino sino"
+        ;
+    }
+
+    .filme_informacoes {
+        grid-area: info;
+    }
+
+    .filme_img {
+        grid-area: img;
+    }
+
+    .filme-sinopse {
+        grid-area: sino;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .filme {
+        grid-template-areas: 
+        "img img img"
+        "info info info"
+        "sino sino sino"
+        ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filme_informacoes {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .filme-informacoes_quantitativas {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .barraPesquisa input {
+        width: 75%;
+    }
+
+    .barraPesquisa i {
+        display: none;
+    }
+}
